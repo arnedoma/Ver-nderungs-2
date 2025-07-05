@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Änderungsprotokoll - Pflegeheim "Haus Sonnenschein" (Kompakt)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for A4 printing */
+            justify-content: center;
+            gap: 10mm; /* Space between the two A5 forms on A4 */
+            padding: 10mm; /* Overall padding for the A4 page */
+        }
+
+        .a5-form {
+            width: 148mm; /* A5 width */
+            height: 210mm; /* A5 height */
+            background: white;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            padding: 15mm; /* Inner padding for content */
+            box-sizing: border-box;
+            border: 1px solid #ddd; /* Light border to define the A5 area */
+            page-break-inside: avoid; /* Avoid breaking the form across pages */
+            page-break-after: auto; /* Allow page breaks after the form if needed */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10mm;
+            border-bottom: 1px solid #27ae60;
+            padding-bottom: 3mm;
+        }
+
+        .header h1 {
+            font-size: 14pt; /* Smaller for A5 */
+            color: #27ae60;
+            margin-bottom: 1mm;
+        }
+
+        .header p {
+            font-size: 8pt; /* Smaller for A5 */
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 8mm; /* Reduced margin */
+        }
+
+        .section h2 {
+            font-size: 10pt; /* Smaller for A5 */
+            color: #2c3e50;
+            margin-bottom: 4mm;
+            border-bottom: 1px dashed #bbb;
+            padding-bottom: 2mm;
+        }
+
+        .field-row {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 4mm; /* Reduced margin */
+        }
+
+        .field-row label {
+            font-weight: bold;
+            flex-basis: 40mm; /* Adjusted width for labels on A5 */
+            flex-shrink: 0;
+            font-size: 9pt; /* Smaller for A5 */
+            color: #34495e;
+        }
+
+        .field-row .input-line {
+            flex-grow: 1;
+            border-bottom: 1px solid #000;
+            min-height: 4mm; /* Reduced height */
+            padding: 0 1mm;
+            font-size: 9pt; /* Smaller for A5 */
+        }
+
+        .checkbox-group {
+            margin-top: 3mm;
+            margin-bottom: 5mm;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            font-size: 9pt; /* Smaller for A5 */
+            margin-bottom: 2mm; /* Spacing between checkboxes */
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 4mm;
+            width: 3.5mm; /* Smaller checkbox */
+            height: 3.5mm;
+            border: 1px solid #000;
+            flex-shrink: 0; /* Prevent checkbox from shrinking */
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid #ddd;
+            min-height: 15mm; /* Reduced height */
+            padding: 3mm;
+            font-size: 9pt; /* Smaller for A5 */
+            box-sizing: border-box;
+            line-height: 1.3;
+            margin-top: 2mm;
+        }
+
+        .label-above-textarea {
+            display: block;
+            font-weight: bold;
+            font-size: 9pt;
+            color: #34495e;
+            margin-bottom: 2mm;
+        }
+
+        .note {
+            background: #fef3c7;
+            padding: 5mm;
+            border-left: 3px solid #f59e0b; /* Thinner border */
+            font-size: 8pt; /* Smaller for A5 */
+            color: #78350f;
+            margin-top: 10mm;
+            border-radius: 3px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 10mm;
+            font-size: 7pt; /* Even smaller for A5 */
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 3mm;
+        }
+
+        /* Print-specific styles */
+        @page {
+            size: A4; /* Target A4 paper */
+            margin: 10mm; /* Small margins for the A4 sheet */
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+            .page-wrapper {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                justify-content: space-between; /* Distribute forms evenly */
+                height: 277mm; /* Total A4 height - 20mm margin = 277mm */
+                align-content: flex-start; /* Start forms at the top */
+                gap: 5mm 10mm; /* Adjust gap for printing */
+            }
+            .a5-form {
+                box-shadow: none;
+                border: 1px dashed #ccc; /* Lighter border for print, or remove */
+                page-break-before: auto;
+                page-break-after: auto;
+            }
+            /* Hide elements not needed for print (none in this case, it's print-only) */
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="a5-form">
+            <div class="header">
+                <h1>ÄNDERUNGSPROTOKOLL</h1>
+                <p>Pflegeheim "Haus Sonnenschein" • An Küche & Verwaltung</p>
+            </div>
+
+            <div class="section">
+                <h2>👤 Bewohnerinformationen</h2>
+                <div class="field-row">
+                    <label>Bewohner-Name:</label>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field-row">
+                    <label>Meldedatum:</label>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field-row">
+                    <label>Gemeldet von:</label>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📋 Art der Änderung (Bitte ankreuzen)</h2>
+                <div class="checkbox-group">
+                    <div class="checkbox-item"><input type="checkbox"> Neueinzug</div>
+                    <div class="checkbox-item"><input type="checkbox"> Verlegung ins Krankenhaus</div>
+                    <div class="checkbox-item"><input type="checkbox"> Rückkehr aus Krankenhaus</div>
+                    <div class="checkbox-item"><input type="checkbox"> Kostformänderung</div>
+                    <div class="checkbox-item"><input type="checkbox"> Nüchternheit (NPO)</div>
+                    <div class="checkbox-item"><input type="checkbox"> Frühstückswunsch</div>
+                    <div class="checkbox-item"><input type="checkbox"> Sonstiges</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 Details zur Änderung</h2>
+                <label class="label-above-textarea">Bitte relevante Details hier eintragen:</label>
+                <textarea rows="8" placeholder="z.B. bei Neueinzug: Erst-Kostform, Allergien; bei Krankenhaus: Status (verlegt/zurück), Kostform; bei Kostformänderung: alte/neue Kostform, Grund; bei NPO: Grund, voraussichtliches Ende; bei Frühstückswunsch: spezifische Wünsche; bei Sonstigem: genaue Beschreibung."></textarea>
+            </div>
+
+            <div class="note">
+                <p><strong>Wichtig:</strong> Sorgfältig ausfüllen & umgehend an Küche/Verwaltung weiterleiten!</p>
+            </div>
+
+            <div class="footer">
+                <p>Erstellt von: Arne Domachofski | Datum: 05. Juli 2025</p>
+            </div>
+        </div>
+
+        <div class="a5-form">
+            <div class="header">
+                <h1>ÄNDERUNGSPROTOKOLL</h1>
+                <p>Pflegeheim "Haus Sonnenschein" • An Küche & Verwaltung</p>
+            </div>
+
+            <div class="section">
+                <h2>👤 Bewohnerinformationen</h2>
+                <div class="field-row">
+                    <label>Bewohner-Name:</label>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field-row">
+                    <label>Meldedatum:</label>
+                    <div class="input-line"></div>
+                </div>
+                <div class="field-row">
+                    <label>Gemeldet von:</label>
+                    <div class="input-line"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📋 Art der Änderung (Bitte ankreuzen)</h2>
+                <div class="checkbox-group">
+                    <div class="checkbox-item"><input type="checkbox"> Neueinzug</div>
+                    <div class="checkbox-item"><input type="checkbox"> Verlegung ins Krankenhaus</div>
+                    <div class="checkbox-item"><input type="checkbox"> Rückkehr aus Krankenhaus</div>
+                    <div class="checkbox-item"><input type="checkbox"> Kostformänderung</div>
+                    <div class="checkbox-item"><input type="checkbox"> Nüchternheit (NPO)</div>
+                    <div class="checkbox-item"><input type="checkbox"> Frühstückswunsch</div>
+                    <div class="checkbox-item"><input type="checkbox"> Sonstiges</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 Details zur Änderung</h2>
+                <label class="label-above-textarea">Bitte relevante Details hier eintragen:</label>
+                <textarea rows="8" placeholder="z.B. bei Neueinzug: Erst-Kostform, Allergien; bei Krankenhaus: Status (verlegt/zurück), Kostform; bei Kostformänderung: alte/neue Kostform, Grund; bei NPO: Grund, voraussichtliches Ende; bei Frühstückswunsch: spezifische Wünsche; bei Sonstigem: genaue Beschreibung."></textarea>
+            </div>
+
+            <div class="note">
+                <p><strong>Wichtig:</strong> Sorgfältig ausfüllen & umgehend an Küche/Verwaltung weiterleiten!</p>
+            </div>
+
+            <div class="footer">
+                <p>Erstellt von: Arne Domachofski | Datum: 05. Juli 2025</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
